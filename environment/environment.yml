@@ -5,6 +5,7 @@ channels:
   - iopath
   - fvcore
   - pytorch
+  - nvidia
   - anaconda
   - conda-forge
   - defaults
@@ -44,7 +45,7 @@ dependencies:
   - comm=0.1.2
   - contourpy=1.0.5
   - cryptography=39.0.1
-  - cudatoolkit=11.3.1
+  #- cudatoolkit==11.7
   - cycler=0.11.0
   - cytoolz=0.12.2
   - dask-core=2022.12.1
@@ -211,7 +212,10 @@ dependencies:
   - python-dateutil=2.8.2
   - python-fastjsonschema=2.16.2
   - python_abi=3.8
-  - pytorch=1.12.1
+  #- pytorch=1.12.1
+  - pytorch==1.13.0
+  - torchvision==0.14.0
+  - pytorch-cuda=11.7
   - pytorch-lightning=2.0.4
   - pytorch-mutex=1.0
   - pytz=2022.7
@@ -228,7 +232,8 @@ dependencies:
   - rsa=4.7.2
   - rtree=1.0.1
   - scikit-image=0.19.2
-  - scikit-learn=1.2.2
+  #- scikit-learn=1.2.2
+  - scikit-learn-intelex
   - scipy=1.10.1
   - seaborn=0.12.2
   - send2trash=1.8.0
@@ -253,9 +258,9 @@ dependencies:
   - tk=8.6.12
   - toml=0.10.2
   - toolz=0.12.1
-  - torchaudio=0.12.1
+  #- torchaudio=0.12.1
   - torchmetrics=0.11.4
-  - torchvision=0.13.1
+  #- torchvision=0.13.1
   - tornado=6.2
   - tqdm=4.65.0
   - traitlets=5.7.1
@@ -298,9 +303,10 @@ dependencies:
       - omegaconf==2.3.0
       - opencv-python==4.5.5.64
       - pathtools==0.1.2
-      - pointnet2==0.0.0
+      #- pointnet2==0.0.0
       - psutil==5.9.5
-      - pyg-lib==0.2.0+pt112cu113
+      #- pyg-lib==0.2.0+pt112cu113
+      #- pyg-lib
       - pynvml==11.4.1
       - rich==13.4.2
       - scalene==1.5.22.2
@@ -313,7 +319,10 @@ dependencies:
       - torch-sparse==0.6.17
       - torch-spline-conv==1.2.2
       - transformations==2022.9.26
-      - triton==2.0.0.post1
+      #- triton==2.0.0.post1
+      - triton
       - urdf-parser-py==0.0.4
       - wandb==0.15.5
-      - xformers==0.0.21+ec5e4d3.d20230718
+      #- xformers==0.0.21+ec5e4d3.d20230718
+      - xformers==0.0.22
+      # xformers upgrades pytorch to 2.0.1 (works for now). Ref: https://github.com/NVlabs/RVT/issues/45#issuecomment-2197819325

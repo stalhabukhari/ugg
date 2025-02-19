@@ -18,11 +18,12 @@ To set up the required environment, follow these steps:
     ```shell
     conda env create -f environment/environment.yml
     conda activate ugg
+    pip install --upgrade pip
+    conda install pytorch==2.0.1 torchvision==0.15.2 pytorch-cuda=11.7 -c pytorch -c nvidia
     ```
 2. Install third party resources:
     ```shell
-    cd thirdparty/pytorch_kinematics
-    pip install -e . && cd ..
+    cd thirdparty/pytorch_kinematics && pip install -e . && cd ..
     git clone https://github.com/stalhabukhari/TorchSDF.git
     cd TorchSDF && pip install -e . && cd ..
     cd ../LION && python build_pkg.py
