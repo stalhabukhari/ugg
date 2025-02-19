@@ -16,15 +16,15 @@ To set up the required environment, follow these steps:
 
 1. Create a new Anaconda environment named `ugg`:
     ```shell
-    conda env create -f environment/environment.yaml
+    conda env create -f environment/environment.yml
     conda activate ugg
     ```
 2. Install third party resources:
     ```shell
     cd thirdparty/pytorch_kinematics
     pip install -e . && cd ..
-    git clone https://github.com/wrc042/TorchSDF.git
-    cd TorchSDF && git checkout 0.1.0 && pip install -e . && cd ..
+    git clone https://github.com/stalhabukhari/TorchSDF.git
+    cd TorchSDF && pip install -e . && cd ..
     cd ../LION && python build_pkg.py
     ```
 
