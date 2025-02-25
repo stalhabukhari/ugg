@@ -40,6 +40,8 @@ From: nvidia/cuda:11.7.1-devel-ubuntu22.04
     conda activate ugg
     pip install --upgrade pip
     conda install pytorch==2.0.1 torchvision==0.15.2 pytorch-cuda=11.7 -c pytorch -c nvidia
+    conda install pytorch3d -c pytorch3d
+    conda install pyg pytorch-sparse pytorch-spline-conv pytorch-scatter pytorch-cluster -c pyg
 
     # third party
     cd /code-dir/thirdparty/pytorch_kinematics && pip install -e .

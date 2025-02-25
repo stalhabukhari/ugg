@@ -19,7 +19,9 @@ To set up the required environment, follow these steps:
     conda env create -f environment/environment.yml
     conda activate ugg
     pip install --upgrade pip
-    conda install pytorch==2.0.1 torchvision==0.15.2 pytorch-cuda=11.7 -c pytorch -c nvidia
+    conda install -y pytorch==2.0.1 torchvision==0.15.2 pytorch-cuda=11.7 -c pytorch -c nvidia
+    conda install -y pytorch3d -c pytorch3d
+    conda install -y pyg pytorch-sparse pytorch-spline-conv pytorch-scatter pytorch-cluster -c pyg
     ```
 2. Install third party resources:
     ```shell
@@ -41,6 +43,17 @@ sh run_isaac.sh
 
 ## Datasets
 We provide support for the [DexGraspNet Dataset](https://pku-epic.github.io/DexGraspNet/). To download the dataset, please refer to the dataset website. You may find the dataset split [here](https://github.com/PKU-EPIC/DexGraspNet/issues/4) or download the files with our model checkpoints below. The data to train the discriminator is also available below.
+
+TLDR;
+
+```sh
+# Download dataset
+wget https://mirrors.pku.edu.cn/dl-release/DexGraspNet-ICRA2023/dexgraspnet.tar.gz
+wget https://mirrors.pku.edu.cn/dl-release/DexGraspNet-ICRA2023/meshdata.tar.gz
+# fetch splits
+wget https://github.com/PKU-EPIC/DexGraspNet/files/11741848/train.txt
+wget https://github.com/PKU-EPIC/DexGraspNet/files/11741850/test.txt
+```
 
 After processing the data, ensure that you have a folder named `data` with the following structure:
 ```
@@ -98,6 +111,12 @@ You may find all results under `results/PROJECT/MODEL_NAME`.
 To use the model, download the weight file [**here**](https://drive.google.com/drive/folders/1hcE9dDOv2Kx4UJTJhwbkhjexSZF98iJk?usp=sharing) and put the `checkpoints` folder under this main foler. Add following configuration to the configuration file:
 ```yaml
 WEIGHT_FILE: checkpoints/ugg/ugg_bs8x256_lr0002_l2_cosine/ugg.ckpt
+```
+
+TLDR;
+```sh
+pip install gdown
+gdown --folder https://drive.google.com/drive/folders/1hcE9dDOv2Kx4UJTJhwbkhjexSZF98iJk
 ```
 
 ## FAQ

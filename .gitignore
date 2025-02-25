@@ -222,3 +222,4 @@ dump/
 *.pdf
 checkpoints
 data
+*.sif
